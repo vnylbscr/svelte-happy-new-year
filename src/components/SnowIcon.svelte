@@ -1,13 +1,21 @@
 <script>
-  export let snow, onDelete;
+  import { onDestroy } from "svelte"
+
+  export let snow, onDelete
+
+  let timeoutId
 
   function deleteSnow(id) {
-    onDelete(id);
+    onDelete(id)
   }
 
-  setTimeout(() => {
-    deleteSnow(snow.id);
-  }, snow.animationDuration.split("s")[0] * 1000);
+  timeoutId = setTimeout(() => {
+    deleteSnow(snow.id)
+  }, snow.animationDuration.split("s")[0] * 1000)
+
+  onDestroy(() => {
+    clearTimeout(timeoutId)
+  })
 </script>
 
 <svg
@@ -36,7 +44,7 @@
     animation: fall linear forwards;
     width: var(--random);
     height: var(--random);
-    fill: lightgrey;
+    fill: #fff;
     opacity: var(--randomOpacity);
     left: var(--leftRandom);
     animation-duration: var(--animationDuration);

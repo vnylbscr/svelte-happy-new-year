@@ -1,20 +1,13 @@
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  font-family: "Rubik", sans-serif;
 }
 
-.root {
-    background-color: #273043;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+:root {
+  --text-light: #f2ffe9;
+  --border-main: 8px;
+  --main: #273043;
 }
-
-
-
-
-
